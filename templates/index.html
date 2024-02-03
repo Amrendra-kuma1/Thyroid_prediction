@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Disease Detection</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <nav>
+        <a href="#" class="logo">Thyroid Disease Detection</a>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="form_body">
+            <header>For Thyroid Detection, Fill This Form</header>
+          <form action="{{ url_for('predict')}}" method="post">
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required placeholder="Enter your age">
+
+    <label for="FTI">FTI:</label>
+    <input type="number" id="FTI" name="FTI" required placeholder="Enter FTI value">
+
+    <label for="TT4">TT4:</label>
+    <input type="number" id="TT4" name="TT4" required placeholder="Enter TT4 value">
+
+    <label for="T3">T3:</label>
+    <input type="number" id="T3" name="T3" required placeholder="Enter your T3 value">
+
+    <label for="T4U">T4U:</label>
+    <input type="number" id="T4U" name="T4U" required placeholder="Enter your T4U value">
+
+    <label for="sex">Sex:</label>
+    <select id="sex" name="sex" required>
+        <option value="sex_M">Male</option>
+        <option value="sex_F">Female</option>
+    </select>
+
+    <label for="pregnant">Pregnant:</label>
+    <select id="pregnant" name="pregnant" required>
+        <option value="pregnant_t">Yes</option>
+        <option value="pregnant_f">No</option>
+    </select>
+
+    <label for="tumor">Tumor:</label>
+    <select id="tumor" name="tumor" required>
+        <option value="tumor_t">Yes</option>
+        <option value="tumor_f">No</option>
+    </select>
+
+    <label for="i131_treatment">I131 Treatment:</label>
+    <select id="i131_treatment" name="i131_treatment" required>
+        <option value="i131_treatment_t">Yes</option>
+        <option value="i131_treatment_f">No</option>
+    </select>
+
+    <label for="sick">Sick:</label>
+    <select id="sick" name="sick" required>
+        <option value="sick_t">Yes</option>
+        <option value="sick_f">No</option>
+    </select>
+
+    <!-- Add more form fields as needed -->
+
+    <button type="submit">Predict Thyroid Disease</button>
+</form>
+ <br>
+   <br>
+   {{ prediction_text }}
+        </div>
+
+    </section>
+
+    <section id="about">
+        <h2>About Thyroid Disease</h2>
+        <p>
+            Thyroid disease is a medical condition affecting the thyroid gland, a crucial part of the endocrine system. The thyroid regulates metabolism, energy production, and various bodily functions.
+        </p>
+        <div class="types-container">
+            <div class="type">
+                <h3>Hypothyroidism</h3>
+                <p>Occurs when the thyroid gland doesn't produce enough hormones. Symptoms include fatigue, weight gain, and cold intolerance.</p>
+            </div>
+            <div class="type">
+                <h3>Hyperthyroidism</h3>
+                <p>Characterized by an overactive thyroid, leading to symptoms such as weight loss, rapid heartbeat, and anxiety.</p>
+            </div>
+            <div class="type">
+                <h3>Hashimoto Disease</h3>
+                <p>An autoimmune condition causing inflammation of the thyroid. It often leads to hypothyroidism.</p>
+            </div>
+            <!-- Add more types as needed -->
+        </div>
+
+        <div class="precautions">
+            <h3>Precautionary Methods</h3>
+            <ul>
+                <li>Regular thyroid check-ups</li>
+                <li>Healthy diet with iodine-rich foods</li>
+                <li>Manage stress through relaxation techniques</li>
+                <li>Stay physically active</li>
+                <li>Follow prescribed medications</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="portfolio">
+        <!-- Add content for the portfolio section, e.g., showcase of your model or related projects -->
+    </section>
+
+    <footer>
+        &copy; 2024 Thyroid Disease Prediction
+    </footer>
+</body>
+</html>
